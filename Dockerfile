@@ -16,3 +16,4 @@ RUN go-wrapper download && \
     go-wrapper install
 
 ENTRYPOINT ["app"]
+HEALTHCHECK --interval=35s --timeout=4s CMD curl -f http://localhost:8080 || exit 1
